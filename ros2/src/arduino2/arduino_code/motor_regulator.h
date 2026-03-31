@@ -1,5 +1,6 @@
 #pragma once
 #include "robot_params.h"
+
 struct PID {
   float kp, ki, kd, max_i;
   float integral = 0;
@@ -36,24 +37,33 @@ struct Encoder {
     ticks += dir;
   }
 
-  void calc_delta() {
+  // НОВОЕ: Безопасное чтение 32-битной переменной (защита от разрыва байтов прерыванием)
+  long get_ticks_safe() {
     noInterrupts();
-    speed = ticks - prev_ticks;
-    prev_ticks = ticks;
+    long t = ticks;
     interrupts();
+    return t;
+  }
+
+  void calc_delta() {
+    long current_ticks = get_ticks_safe();
+    speed = current_ticks - prev_ticks;
+    prev_ticks = current_ticks;
   }
 };
 
 struct Motor {
   byte pin_dir, pin_pwm;
+  bool invert;
   
-  Motor(byte dir, byte pwm) : pin_dir(dir), pin_pwm(pwm) {
+  Motor(byte dir, byte pwm, bool inv = false) : pin_dir(dir), pin_pwm(pwm), invert(inv) {
     pinMode(pin_dir, OUTPUT);
     pinMode(pin_pwm, OUTPUT);
   }
 
   void set_pwmdir(int speed) {
     speed = constrain(speed, -255, 255);
+    if (invert) speed = -speed;
     digitalWrite(pin_dir, speed > 0);
     analogWrite(pin_pwm, abs(speed));
   }
@@ -69,7 +79,6 @@ struct Regulator {
   double position_target = 0;
   float max_accel;
   
-  // Добавляем таймер для плавного останова
   unsigned long last_nonzero_time = 0;
   bool position_reset = false;
 
@@ -79,19 +88,16 @@ struct Regulator {
   }
 
   void set_speed(float new_speed) {
-    // При изменении направления сбрасываем ошибки
     if ((target_speed > 0 && new_speed < 0) || (target_speed < 0 && new_speed > 0)) {
-      position_target = encoder.ticks;
+      position_target = encoder.get_ticks_safe();
       pid.integral = 0;
     }
     
-    // При начале движения синхронизируем позицию
     if (target_speed == 0 && new_speed != 0) {
-      position_target = encoder.ticks;
+      position_target = encoder.get_ticks_safe();
       position_reset = false;
     }
     
-    // Обновляем таймер последней активности
     if (new_speed != 0) {
       last_nonzero_time = millis();
     }
@@ -99,32 +105,34 @@ struct Regulator {
     target_speed = constrain(new_speed, -MAX_DELTA_TICKS, MAX_DELTA_TICKS);
   }
 
-  void update() {
-    // Плавное изменение скорости
+  // НОВОЕ: Принимаем множитель синхронизации (от 0.0 до 1.0)
+  void update(float sync_mult = 1.0f) {
+    long current_ticks = encoder.get_ticks_safe();
+
+    // Плавное изменение скорости масштабируется общим коэффициентом синхронизации
     float speed_diff = target_speed - current_speed;
-    float allowed_diff = copysignf(max_accel * DT, speed_diff);
+    float allowed_diff = copysignf(max_accel * DT * sync_mult, speed_diff);
     
     current_speed += (fabs(speed_diff) > fabs(allowed_diff)) ? allowed_diff : speed_diff;
     
-    // Автоматическая синхронизация позиции при остановке
     if (current_speed == 0) {
-      position_target = encoder.ticks;
+      position_target = current_ticks;
     } 
     else {
-      position_target += current_speed * DT;
+      // И сама цель тоже продвигается с учетом коэффициента синхронизации
+      position_target += current_speed * DT * sync_mult;
     }
     
-    // Полный сброс через 1 секунду простоя
     if (target_speed == 0 && current_speed == 0) {
       if (millis() - last_nonzero_time > 1000 && !position_reset) {
-        position_target = encoder.ticks;
+        position_target = current_ticks;
         pid.integral = 0;
         position_reset = true;
       }
     }
     
     // Расчет PWM
-    int error = position_target - encoder.ticks;
+    int error = position_target - current_ticks;
     int pwm = position_reset ? 0 : pid.calc(error);
     motor.set_pwmdir(pwm);
     

@@ -29,22 +29,28 @@ struct EncoderData {
   float left_speed;
   float right_speed;
 };
-int16_t prev_left_ticks = 0;
-int16_t prev_right_ticks = 0;
+
+int16_t prev_left_ticks_ros = 0;
+int16_t prev_right_ticks_ros = 0;
+
 // Отправка данных энкодеров
 void send_encoder_data() {
-  left_regulator.encoder.calc_delta();
-  right_regulator.encoder.calc_delta();
+  // Мы не вызываем здесь calc_delta()! Он должен вызываться только в цикле 10 мс, 
+  // иначе собьется расчет локальной скорости.
   
-  int16_t left_delta = left_regulator.encoder.ticks - prev_left_ticks;
-  int16_t right_delta = right_regulator.encoder.ticks - prev_right_ticks;
+  long current_left = left_regulator.encoder.get_ticks_safe();
+  long current_right = right_regulator.encoder.get_ticks_safe();
 
-  prev_left_ticks = left_regulator.encoder.ticks;
-  prev_right_ticks = right_regulator.encoder.ticks;
+  int16_t left_delta = current_left - prev_left_ticks_ros;
+  int16_t right_delta = current_right - prev_right_ticks_ros;
 
-  // Преобразуем скорости в м/с
-  float left_speed_mps = left_regulator.encoder.speed * METERS_PER_TICK;
-  float right_speed_mps = right_regulator.encoder.speed * METERS_PER_TICK;
+  prev_left_ticks_ros = current_left;
+  prev_right_ticks_ros = current_right;
+
+  // ИСПРАВЛЕНИЕ: encoder.speed - это тики за DT (0.01с). 
+  // Чтобы получить тики/сек, нужно разделить на DT.
+  float left_speed_mps = (left_regulator.encoder.speed / DT) * METERS_PER_TICK;
+  float right_speed_mps = (right_regulator.encoder.speed / DT) * METERS_PER_TICK;
 
   EncoderData data{
     left_delta,
@@ -52,13 +58,14 @@ void send_encoder_data() {
     left_speed_mps,
     right_speed_mps
   };
-  Serial.write((uint8_t*)&data, sizeof(data)); //TODO: ИСПРАВИТЬ РЕАЛЬНЫЕ СКОРОСТИ РОБОТА
+  Serial.write((uint8_t*)&data, sizeof(data)); 
 }
 
 void handshake_response(){
   Serial.write("ARDUINO_OK");
   Serial.flush();
 }
+
 void command_spin() {
   if(Serial.available() > 0) {
     uint8_t cmd = Serial.read();
