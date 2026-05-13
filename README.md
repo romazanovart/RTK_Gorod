@@ -61,6 +61,8 @@
 
 ## 6. Фотографии 
 
+<img width="1280" height="853" alt="telegram-cloud-photo-size-2-5379932814897256609-y" src="https://github.com/user-attachments/assets/e0ce4ec0-6cb1-40fa-9e15-6ad292f9ef53" />
+
 <img width="320" height="214" alt="photo_2026-04-01_14-09-48" src="https://github.com/user-attachments/assets/da2cdb65-4b3b-4de3-9a90-9162a51540d8" />
 <img width="320" height="214" alt="photo_2026-04-03_16-09-03" src="https://github.com/user-attachments/assets/0ab7f02a-f6df-4ae7-9c30-84149297c537" />
 <img width="512" height="341" alt="Wcy5UagGjP67iT-sMEZTTTyaYA_npgYFrm4saT8pA4lEMqJsZ6UJrYUk-UjV3lUM89I9t9kbg-bALZid-tVJljFL" src="https://github.com/user-attachments/assets/a78cde05-03a3-4db8-a35c-ddb4f7975ee2" />
