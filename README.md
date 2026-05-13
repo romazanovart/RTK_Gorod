@@ -131,3 +131,9 @@
 ## 10. Лицензия
 
 ВСТАВИТЬ (например, MIT License)
+
+
+<img width="2560" height="1703" alt="etOHfNc30Jblx4mhLOEgxzIRzffFAGTrsQBV9myG-88KK9FgFeKqJz0fR106HVV7Xe0h2m5jwEtYQZ1I0fUsMoyt" src="https://github.com/user-attachments/assets/8327ac36-beb3-4421-bb14-ce75911fa8fe" />
+
+<img width="2560" height="1703" alt="Wcy5UagGjP67iT-sMEZTTTyaYA_npgYFrm4saT8pA4lEMqJsZ6UJrYUk-UjV3lUM89I9t9kbg-bALZid-tVJljFL" src="https://github.com/user-attachments/assets/a78cde05-03a3-4db8-a35c-ddb4f7975ee2" />
+
