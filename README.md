@@ -50,7 +50,13 @@
 
 ---
 
-## 5. Команда проекта
+## 5. Распознавание знаков дорожного движения
+
+<img width="1276" height="1028" alt="telegram-cloud-photo-size-2-5343636256732158530-y" src="https://github.com/user-attachments/assets/dc79d785-a304-4413-a942-ef25da4baa40" />
+
+---
+
+## 6. Команда проекта
 
 [Голышев Юрий Александрович ](https://github.com/wodocanal)— ROS2-разработчик (Разрабатывал основной пайплайн решения, логику езды робота по полигону)
 
@@ -59,7 +65,7 @@
 [Тамбовцев Савва Викторович ](https://github.com/CardlnaI)— Инженер (Занимался адаптцей мобильной платформы к заданию хакатона)
 
 
-## 6. Фотографии 
+## 7. Фотографии 
 
 <img width="1280" height="853" alt="telegram-cloud-photo-size-2-5379932814897256609-y" src="https://github.com/user-attachments/assets/e0ce4ec0-6cb1-40fa-9e15-6ad292f9ef53" />
 
