@@ -46,7 +46,7 @@
 
 **ROS2**
 
-* **Навигация:** SLAM / Encoder-based odometry.
+**Навигация:** SLAM / Encoder-based odometry.
 
 ---
 
