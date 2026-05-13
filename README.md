@@ -19,9 +19,6 @@
 ---
 
 ## 3. Основной функционал проекта
-<img width="320" height="214" alt="photo_2026-04-01_14-09-48" src="https://github.com/user-attachments/assets/da2cdb65-4b3b-4de3-9a90-9162a51540d8" />
-<img width="320" height="214" alt="photo_2026-04-03_16-09-03" src="https://github.com/user-attachments/assets/0ab7f02a-f6df-4ae7-9c30-84149297c537" />
-
 
 * 
 **Автономная навигация:** Движение по полигону (размером $4000\times4000$ мм) с использованием дорожной разметки и собственных карт.
@@ -112,11 +109,10 @@
 
 
 
----
 
-## 10. Лицензия
+<img width="320" height="214" alt="photo_2026-04-01_14-09-48" src="https://github.com/user-attachments/assets/da2cdb65-4b3b-4de3-9a90-9162a51540d8" />
+<img width="320" height="214" alt="photo_2026-04-03_16-09-03" src="https://github.com/user-attachments/assets/0ab7f02a-f6df-4ae7-9c30-84149297c537" />
 
-ВСТАВИТЬ (например, MIT License)
 
 
 <img width="512" height="341" alt="etOHfNc30Jblx4mhLOEgxzIRzffFAGTrsQBV9myG-88KK9FgFeKqJz0fR106HVV7Xe0h2m5jwEtYQZ1I0fUsMoyt" src="https://github.com/user-attachments/assets/8327ac36-beb3-4421-bb14-ce75911fa8fe" />
