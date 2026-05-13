@@ -52,6 +52,8 @@
 
 ## 5. Распознавание знаков дорожного движения
 
+Для распознавания знаков дорожного ддвижения была обучена модель YOLO 
+
 <img width="1276" height="1028" alt="telegram-cloud-photo-size-2-5343636256732158530-y" src="https://github.com/user-attachments/assets/dc79d785-a304-4413-a942-ef25da4baa40" />
 
 ---
