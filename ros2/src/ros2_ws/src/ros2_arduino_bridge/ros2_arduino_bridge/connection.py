@@ -81,7 +81,7 @@ class ArduinoConnection:
         self._serial = serial
         # Команды этого устройства
         self._set_velocity = Command(0x10, (Primitives.f32, Primitives.f32))
-        self._turn = Command(0x12, (Primitives.i8, Primitives.i8))
+        self._turn = Command(0x12, (Primitives.i32, Primitives.i32))
         self._get_data = Command(0x11, (Primitives.u8,))
         self._go_dist = Command(0x13, (Primitives.i32, Primitives.i32))
         self._handshake_command = Command(0x14, (Primitives.u8,))

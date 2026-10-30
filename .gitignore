@@ -12,3 +12,9 @@ models/**/*\~
 *.swo
 *.tmp
 *.temp
+
+# Python environments and runtime caches
+__pycache__/
+*.py[cod]
+.venv/
+venv-yolo/

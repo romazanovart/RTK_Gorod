@@ -1,0 +1,24 @@
+city_mission:
+  ros__parameters:
+    linear_speed: 0.07
+    steering_gain: 0.65
+    max_angular_speed: 0.40
+    white_value_min: 165
+    white_saturation_max: 85
+    max_white_fraction: 0.55
+    line_lost_timeout: 1.0
+    intersection_confirm_frames: 3
+    intersection_cooldown: 1.5
+    minimum_follow_time: 1.0
+    maximum_follow_time: 15.0
+    center_advance_mm: 170
+    center_advance_speed: 70
+    turn_speed: 100
+    observe_seconds: 1.2
+    sign_window_seconds: 1.5
+    sign_min_confidence: 0.55
+    sign_min_confirmations: 2
+    bus_stop_seconds: 2.2
+    expected_bus_stops: 1
+    obstacle_stop_distance: 0.25
+    http_port: 8081

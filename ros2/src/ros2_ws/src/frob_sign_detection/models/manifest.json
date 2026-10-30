@@ -1,0 +1,7 @@
+{
+  "filename": "best.pt",
+  "size": 60236576,
+  "sha256": "e609e19448bf5c6f3678012fa7611b8030bd0b8fcc0343ef134a72d9aca47ef9",
+  "architecture": "yolo26s",
+  "ultralytics": "8.4.140"
+}
