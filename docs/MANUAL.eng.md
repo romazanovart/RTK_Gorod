@@ -4,7 +4,7 @@
 
 ![Frob Logo](https://github.com/user-attachments/assets/4e6b15c5-6662-47f5-8419-bada88828910)
 
-[Russian-language documentation](MANUAL.md) · [Team repository](../README.md) · [Competition solution guide (Russian)](SOLUTION.md)
+[Russian-language documentation](MANUAL.md) · [Team repository](../README.md) · [Competition solution guide (Russian)](../README.md#код-и-запуск)
 
 **Frob** is an open—source low cost mobile robot created to promote robotics and [ROS](https://www.ros.org/) training. It is designed for enthusiasts, students, and teachers exploring the world of robotics. Whether you are a beginner or an experienced developer, Frob provides a versatile platform for addressing a wide range of learning challenges.
 
@@ -54,7 +54,7 @@ The Frob platform guide includes a [parts list](assembly_guide/FROB_parts_and_pr
 
 ## Basic Usage
 
-The competition solution combines a camera-based sign detector, road-marking analysis and motor control through Arduino. The [solution guide (Russian)](SOLUTION.md) covers dependencies, building the ROS 2 workspace, launch commands, mission services and debug video streams.
+The competition solution combines a camera-based sign detector, road-marking analysis and motor control through Arduino. The [solution guide (Russian)](../README.md#код-и-запуск) covers dependencies, building the ROS 2 workspace, launch commands, mission services and debug video streams.
 
 The supplied weights are included in the repository. The detector uses a configurable Python interpreter, so the project can be cloned outside the original Raspberry Pi home directory.
 
