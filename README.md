@@ -144,6 +144,12 @@ flowchart LR
 | [`ros2/src/ros2_ws/src/frob_navigation`](ros2/src/ros2_ws/src/frob_navigation) | Карта, SLAM и Nav2 |
 | [`ros2/src/ros2_ws/src/ros2_arduino_bridge`](ros2/src/ros2_ws/src/ros2_arduino_bridge) | Обмен с Arduino по Serial |
 
+### Распознавание знаков
+
+Пример кадра с камеры: обнаруженные дорожные знаки выделены рамками с оценками уверенности.
+
+![Распознавание дорожных знаков на изображении с камеры](docs/images/sign-detection-camera.jpg)
+
 Архитектура модели, записанная в метаданных переданного файла `best.pt`, — **YOLO26s**. Веса опубликованы из предоставленного решения без переобучения. Подробности и контрольная сумма — в [описании модели](ros2/src/ros2_ws/src/frob_sign_detection/models/README.md).
 
 ### Подготовка
