@@ -1,8 +1,8 @@
-> Архив исходного README первого этапа команды MISIS_robolab: НИУ ВШЭ, Москва, 1–3 апреля 2026 года, 🥈 2 место. Первоначальный текст сохранён ниже; общая история трёх призовых выступлений приведена в [актуальном README](../../README.md).
+> Архив исходного README первого этапа команды MISIS_Team: НИУ ВШЭ, Москва, 1–3 апреля 2026 года,  2 место. Описание решения сохранено ниже; название команды исправлено по уточнению участников. общая история трёх призовых выступлений приведена в [актуальном README](../../README.md).
 
 # Движение по городу — Хакатон «Кубок РТК Высшая лига»
 
-В данном репозитории представлено решение команды MISIS_robolab на Задание "Движение по городу" хакатона «Кубок РТК Высшая лига»
+В данном репозитории представлено решение команды MISIS_Team на Задание "Движение по городу" хакатона «Кубок РТК Высшая лига»
 
 <img width="512" height="341" alt="etOHfNc30Jblx4mhLOEgxzIRzffFAGTrsQBV9myG-88KK9FgFeKqJz0fR106HVV7Xe0h2m5jwEtYQZ1I0fUsMoyt" src="https://github.com/user-attachments/assets/8327ac36-beb3-4421-bb14-ce75911fa8fe" />
 
@@ -20,9 +20,7 @@
 
 **Frob** - это недорогой мобильный робот с открытым исходным кодом, созданный для популяризации робототехники и обучения [ROS](https://www.ros.org/). Он предназначен для энтузиастов, студентов и преподавателей, изучающих мир робототехники. Независимо от того, являетесь ли вы начинающим или опытным разработчиком, Frob предоставляет универсальную платформу для решения широкого спектра задач обучения.
 
-[![Wiki](https://img.shields.io/badge/Wiki-Documentation-blue?style=flat-square&logo=github)](https://github.com/dark516/Frob_robot/wiki)
-[![Telegram](https://img.shields.io/badge/Telegram-Community-blue?style=flat-square&logo=telegram)](https://t.me/FrobCommunity)
-[![License](https://img.shields.io/github/license/dark516/Frob_robot?style=flat-square)](https://github.com/dark516/Frob_robot/blob/main/LICENSE)
+[Документация Frob](https://github.com/dark516/Frob_robot/wiki) · [Сообщество Frob](https://t.me/FrobCommunity)
 
 ---
 
